@@ -69,13 +69,13 @@
         });
 
         albumSlides.owlCarousel({
-            items: 5,
+            items: 2,
             margin: 30,
-            loop: true,
-            nav: true,
+            loop: false,
+            nav: false,
             navText: ['<i class="fa fa-angle-double-left"></i>', '<i class="fa fa-angle-double-right"></i>'],
             dots: false,
-            autoplay: true,
+            autoplay: false,
             autoplayTimeout: 5000,
             smartSpeed: 750,
             responsive: {
@@ -84,15 +84,6 @@
                 },
                 480: {
                     items: 2
-                },
-                768: {
-                    items: 3
-                },
-                992: {
-                    items: 4
-                },
-                1200: {
-                    items: 5
                 }
             }
         });
