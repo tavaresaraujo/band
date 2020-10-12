@@ -32,7 +32,16 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+    :address   => "smtp.sendgrid.net",
+    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :user_name => 'apikey',
+    :password  => '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', # SMTP password is any valid API key, when user_name is "apikey".
+    :authentication => 'login',
+    :domain => 'maratonavirtual.com', # your domain to identify your server when connecting
+  }
 
   config.action_mailer.perform_caching = false
 
