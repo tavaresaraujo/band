@@ -208,22 +208,22 @@
                         <div class="row">
                             <div class="col-md-6 col-lg-4">
                                 <div class="form-group">
-                                    <%= text_field_tag 'txtName', feedback.fetch(:name, nil), placeholder: 'Nome', class: 'form-control' %>
+                                    <%= text_field_tag 'txtName', nil, placeholder: 'Nome', class: 'form-control' %>
                                 </div>
                             </div>
                             <div class="col-md-6 col-lg-4">
                                 <div class="form-group">
-                                    <%= email_field_tag 'txtEmail', feedback.fetch(:email, nil), placeholder: 'E-mail', class: 'form-control' %>
+                                    <%= email_field_tag 'txtEmail', nil, placeholder: 'E-mail', class: 'form-control' %>
                                 </div>
                             </div>
                             <div class="col-lg-4">
                                 <div class="form-group">
-                                    <%= text_field_tag 'txtSubject', feedback.fetch(:subject, nil), placeholder: 'Assunto', class: 'form-control' %>
+                                    <%= text_field_tag 'txtSubject', nil, placeholder: 'Assunto', class: 'form-control' %>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <%= text_area_tag 'txtMessage', feedback.fetch(:message, nil),  rows: 10, cols: 30, placeholder: 'Mensagem', class: 'form-control' %>
+                                    <%= text_area_tag 'txtMessage', nil, rows: 10, cols: 30, placeholder: 'Mensagem', class: 'form-control' %>
                                 </div>
                             </div>
                             <div class="col-12 text-center">
