@@ -37,6 +37,16 @@ Rails.application.configure do
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+    :address   => "smtp.sendgrid.net",
+    :port      => 587, # ports 587 and 2525 are also supported with STARTTLS
+    :enable_starttls_auto => true, # detects and uses STARTTLS
+    :user_name => 'apikey',
+    :password  => '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', # SMTP password is any valid API key, when user_name is "apikey".
+    :authentication => 'login',
+    :domain => 'maratonavirtual.com', # your domain to identify your server when connecting
+  }
 
   # Mount Action Cable outside main process or domain.
   # config.action_cable.mount_path = nil
