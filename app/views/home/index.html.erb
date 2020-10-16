@@ -243,6 +243,8 @@
     $("form").submit(function(event) {
         event.preventDefault();
 
+        debugger;
+
         var txtName = $("#txtName").val().trim();
         var txtEmail = $("#txtEmail").val().trim();
         var txtSubject = $("#txtSubject").val().trim();
@@ -278,26 +280,27 @@
             $("#txtMessage").css('border-bottom-color','#FFF');
         }
 
-        if(erroCount == 0){
-            $.ajax({
-                url: "/home/send_email",
-                method: "post",
-                headers: {
-                    'X-Transaction': 'POST Example',
-                    'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
-                },
-                data: { name: txtName, email: txtEmail, subject: txtSubject, message: txtMsg },
-                success: function (result){
-                    if(result['success']){
-                        alert("Email enviado.")
-                    }else{
-                        alert("Email não enviado.")
-                    }
-                },
-                error: function () {
-                    alert("Erro ao enviar email");
-                },
-            }); 
-        }
+        if(erroCount != 0)
+            return false;
+
+        $.ajax({
+            url: "/home/send_email",
+            method: "post",
+            headers: {
+                'X-Transaction': 'POST Example',
+                'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: { name: txtName, email: txtEmail, subject: txtSubject, message: txtMsg },
+            success: function (result){
+                if(result['success']){
+                    alert("Email enviado.")
+                }else{
+                    alert("Email não enviado.")
+                }
+            },
+            error: function () {
+                alert("Erro ao enviar email");
+            },
+        }); 
     });
 </script>
